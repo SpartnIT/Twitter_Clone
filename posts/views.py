@@ -42,7 +42,7 @@ def edit(request, post_id):
         return render(request,"edit.html", {"posts":posts})
     if request.method == "POST":
         edit_post = Post.objects.get(id = post_id)
-        form = PostForm(request.Post, request.FILES,instance = edit_post)
+        form = PostForm(request.POST, request.FILES,instance = edit_post)
         if form.is_valid():
             form.save()
             return HttpResponseRedirect('/')

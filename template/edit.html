@@ -9,7 +9,7 @@
             <form action="/" method="POST">
                 {% csrf_token %}
                 <input type="text" name="name" value="{{posts.name}}"required/>
-                <textarea name="body" value="{{posts.body}}" required></textarea>
+                <textarea name="body" required>{{posts.body}}</textarea>
                 {% if posts.image.url %}
                 <img id="edit-img" src="{{posts.image.url}}"/>
                 {% endif %}

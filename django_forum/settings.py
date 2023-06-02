@@ -27,8 +27,14 @@ SECRET_KEY = 'django-insecure-*5lsuuv=ws625=)+21x9cw+jdyjmeewes#pxj4&^+%b@2m$5z6
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
+CORS_ALLOW_ALL_ORIGINS = True
+X_FRAME_OPTIONS = '*'
+CSRF_TRUSTED_ORIGINS = [
+  'http://127.0.0.1:8000/', 'http://0.0.0.0:3000/',
+  'https://twitterclone--spartnit.repl.co'
+]
 
 # Application definition
 
