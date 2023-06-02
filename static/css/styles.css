@@ -1,0 +1,164 @@
+/*
+Common
+#######################*/
+html,body{
+    height:100%;
+}
+.content {
+    max-width: 640px;
+    height: 100%;
+    margin: 0 auto;
+    border-right: 1px solid #ccc;
+    border-left: 1px solid #ccc;
+}
+.heading {
+    margin: 0 auto;
+    border-right: 1px solid #ccc;
+    border-left: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    max-width: 640px;
+    height: 10%;
+    display: flex;
+}
+.heading img{
+    width: 40px;
+    padding: 10px;
+    margin-right: 20px;
+    margin-left: 10px;
+}
+.heading .homepage{
+    display:flex;
+    align-items: center;
+}
+/*
+Post
+#######################*/
+.post_form{
+    padding:20px 40px;
+    border-bottom: 1px solid #ccc;
+}
+.post_form input{
+    width: 70%;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+.post_form textarea{
+    width: 70%;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+#post_button{
+    width: 74%;
+    font-weight: bold;
+    background-color: #00acee;
+}
+.posts ul{
+    padding:0;
+}
+.posts li{
+    position: relative;
+    display:flex;
+    border-bottom: 1px solid #ccc;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    padding:17px;
+    list-style: none;
+}
+.posts li .menu{
+    display:none;
+    position:absolute;
+    top: 30px;
+    right: 15px;
+    border: 1px solid #ccc;
+    background-color: white;
+    padding: 10px 15px;
+    font-size: 13px;
+    border-radius: 3px;
+}
+.posts li .menu a{
+    text-decoration: none;
+    display: flex;
+    padding: 5px;
+    margin-bottom: 5px;
+    justify-content: center;
+    color: #00acee;
+}
+.posts li .menu_icon{
+    width: 20px;
+    position: absolute;
+    top: 10px;
+    right:18px ;
+}
+.posts li .logo{
+    flex-basis: 15%;
+}
+.posts li .logo img{
+    width: 60%;
+}
+.posts li .name_body{
+    flex-basis: 85%;
+}
+.posts li .name_body .name{
+    font-weight: bold;
+    font-size: 20px;
+}
+.posts li .name_body .datetime{
+    color: gray;
+    font-size: 17px;
+}
+.posts li .post_image{
+    width: 250px;
+    height: 270px;
+}
+.posts li .name_body .total_likes{
+    display:flex;
+}
+.posts li .name_body .total_likes a{
+    display: flex;
+    align-self: center;
+}
+.posts li .name_body .total_likes .like_button img{
+    width: 23px;
+    height: 23px;
+    padding: 4px;
+}
+.posts li .name_body .total_likes .like_number{
+    display: flex;
+    align-items: center;
+}
+@media screen and (max-width:500px){
+    .posts li .name_body .name{
+        font-size: 40px;
+    }
+}
+/*
+######################
+####### Edit Page ####
+*/
+
+#edit-img{
+    width: 250px;
+    height: 270px;
+}
+.buttons{
+    display:flex;
+    gap: 2rem;
+    align-items: center;
+}
+.buttons input{
+    width:45%;
+    background-color:  #00acee;
+    font-weight: bold;
+    align-items: center;
+    margin-bottom: 0;
+}
+.buttons a{
+    text-decoration: none;
+    padding:8px;
+    border: 1px solid #ccc;
+    background-color: firebrick;
+    color: white;
+    border-radius: 4px;
+}

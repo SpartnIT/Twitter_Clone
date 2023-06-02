@@ -1,0 +1,56 @@
+{% extends "base.html" %} {% block content %} {% load static %}
+<div class="heading">
+    <img class="site_logo" src="{% static '/img/twitter.png' %}"/>
+    <h1 class="homepage">Home</h1>
+</div>
+<section class="content">
+    <section class="post_form">
+        <form action="/" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <input type="text" name="name" placeholder="Name" required/>
+            <textarea name="body" placeholder="Tell us anything" required></textarea>
+            <input type="file" name="image" />
+            <input type="submit" value="Post" id="post_button"/>
+        </form>
+    </section>
+    <br>
+    <section class="posts">
+        <ul>
+            <!-- posts comes from views.py -->
+        {% for post in posts %}
+        <li> 
+        <img class="menu_icon js-menu-icon" src="{% static 'img/more.png' %}"/>
+        <div class="menu">
+            <a href="/delete/{{post.id}}/">Delete</a>
+            <a href="/edit/{{post.id}}/">Edit</a>
+        </div>
+        <div class="logo">
+        <img src="{% static 'img/user.png' %}"/>
+        </div>
+        <div class="name_body">
+         <div class="name">{{post.name}}</div>
+         <div class="datetime">{{post.created_at}}</div>
+         <p>{{post.body}}</p>
+         <div class="image_div">
+        {% if post.image.url%}
+         <img class="post_image" src="{{post.image.url}}" />
+        {% endif %}
+         </div>
+         <br>
+         <div class="total_likes">
+         <a class="like_button" href="/likes/{{post.id}}/"> <img src="{% static 'img/love.png' %}" /> </a>
+         <h2 class="like_number">{{post.like}}</h2>
+         </div>
+        </div>
+        </li>
+         {% endfor %}
+        </ul>
+    </section>
+    <script src="https://code.jquery.com/jquery-3.7.0.js"
+  integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="
+  crossorigin="anonymous"></script>
+    <script src="{% static '/js/posts.js/' %}"></script>
+</section>
+
+
+{% endblock %}
